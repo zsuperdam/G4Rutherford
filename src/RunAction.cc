@@ -2,6 +2,10 @@
 
 RunAction::RunAction(){
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
+
+    analysisManager->SetNtupleMerging(true); // merging of the multiple output created by each individual thread
+    // need to have compiled G4 with root, if "geant4-config --has-feature ROOT" returns no then comment the previous line
+    
     analysisManager->CreateNtuple("Events", "Events"); //creazione Ntuple
     analysisManager->CreateNtupleIColumn("Event");
     analysisManager->CreateNtupleIColumn("DetectorID"); //creazione colonna con Id del detector
