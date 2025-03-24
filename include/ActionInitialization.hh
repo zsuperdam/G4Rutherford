@@ -2,7 +2,7 @@
 #define ACTIONINITIALIZATION_HH
 
 #include "G4VUserActionInitialization.hh"
-
+#include "RunAction.hh"
 #include "PrimaryGenerator.hh"
 
 class ActionInitialization : public G4VUserActionInitialization{

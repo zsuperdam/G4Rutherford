@@ -75,5 +75,5 @@ void PrimaryGenerator::GeneratePrimaries(G4Event *anEvent){
     G4double energy = CustomAm241Energy();
     fParticleGun->SetParticleEnergy(energy);
     fParticleGun->GeneratePrimaryVertex(anEvent);
-    G4cout << energy << G4endl;
+    //G4cout << energy << G4endl;
 }
