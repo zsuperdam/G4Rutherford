@@ -7,7 +7,7 @@ RunAction::RunAction(){
     // need to have compiled G4 with root, if "geant4-config --has-feature ROOT" returns no then comment the previous line
     
     analysisManager->CreateNtuple("Events", "Events"); //creazione Ntuple
-    analysisManager->CreateNtupleIColumn("Event");
+    // analysisManager->CreateNtupleIColumn("Event");
     analysisManager->CreateNtupleIColumn("DetectorID"); //creazione colonna con Id del detector
     analysisManager->FinishNtuple(); //fine creazione Ntuple
 }

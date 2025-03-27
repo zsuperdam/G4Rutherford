@@ -27,7 +27,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct(){
 
 
     //gold
-    G4double goldThickness = 3. * um;
+    G4double goldThickness = 155. * nm;
     G4double goldSize = 2. * cm;
     G4Box *solidGold = new G4Box("solidGold", 0.5 * goldSize, 0.5 * goldSize, 0.5 * goldThickness);
     G4LogicalVolume *logicGold = new G4LogicalVolume(solidGold, gold, "logicalGold");
@@ -40,7 +40,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct(){
 
     // Parametri dei rivelatori
     G4double detectorLenght = .15 * cm;
-    G4double detectorWidth = 300. * um;
+    G4double detectorWidth = 300. * um; // 300 um / cm^2 -> 300 / 
     G4Box *solidDetector = new G4Box("solidDetector", 0.5 * detectorLenght, 0.5 * detectorLenght, 0.5 * detectorWidth);
     logicDetector = new G4LogicalVolume(solidDetector, silicon, "logicDetector");
 
@@ -50,7 +50,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct(){
 
     // Numero di rivelatori e configurazione della posizione
     G4int numDetectors = 95; // Numero di rivelatori
-    G4double radius = 5.0 * cm; // Raggio da utilizzare per la posizione dei rivelatori
+    G4double radius = 8.0 * cm; // Raggio da utilizzare per la posizione dei rivelatori
     G4double angleStep = 1.8 * deg; // Passo angolare (90° per posizionarli agli angoli)
 
     new G4PVPlacement(0, G4ThreeVector(0., 0., radius), logicDetector, "physDetector", logicWorld, false, 0, checkOverlaps);

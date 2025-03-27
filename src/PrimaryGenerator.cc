@@ -1,5 +1,6 @@
 #include "PrimaryGenerator.hh"
 
+
 // custom energy (data taken from www.lnhb.fr/nuclides/Am-241_tables.pdf)
 G4double CustomAm241Energy(){
     G4double randomNumber = G4UniformRand();
@@ -43,25 +44,25 @@ PrimaryGenerator::PrimaryGenerator(){
     fParticleGun = new G4ParticleGun(1);
 
     // Particle position
-    G4double x = 0. * m;
-    G4double y = 0. * m;
-    G4double z = 0. * m;
+    G4double x = 0. * mm; 
+    G4double y = 0. * mm;
+    G4double z = -20.55 * mm; // distance source-gold considering the distance between 2 collimators, the 2 collimators width and distance gold plate-collimator
 
     G4ThreeVector pos(x, y, z);
 
     // particle direction
-    G4double px = 0.;
-    G4double py = 0.;
-    G4double pz = 1.;
+    // G4double px = (G4UniformRand() - 0.5) * 0.116;
+    // G4double py = (G4UniformRand() - 0.5) * 0.206;
+    // G4double pz = 1.;
 
-    G4ThreeVector mom(px, py, pz);
+    // G4ThreeVector mom(px, py, pz);
 
     // particle type
     G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
     G4ParticleDefinition *particle = particleTable->FindParticle("alpha");
 
     fParticleGun->SetParticlePosition(pos);
-    fParticleGun->SetParticleMomentumDirection(mom);
+    // fParticleGun->SetParticleMomentumDirection(mom);
     // fParticleGun->SetParticleEnergy(5.4 * MeV); // the energy is being assigned in the GeneratePrimaries function s.t. it is always different
     fParticleGun->SetParticleDefinition(particle);
 }
@@ -74,6 +75,9 @@ void PrimaryGenerator::GeneratePrimaries(G4Event *anEvent){
     // Create vertex
     G4double energy = CustomAm241Energy();
     fParticleGun->SetParticleEnergy(energy);
+    // random moment
+    G4ThreeVector mom((G4UniformRand() - 0.5) * 0.116, (G4UniformRand() - 0.5) * 0.206, 1);
+    fParticleGun->SetParticleMomentumDirection(mom);
     fParticleGun->GeneratePrimaryVertex(anEvent);
     //G4cout << energy << G4endl;
 }

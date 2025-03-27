@@ -13,14 +13,16 @@ void SensitiveDetector::Initialize(G4HCofThisEvent *){
 
 G4bool SensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *){
     G4int eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-
+    if(eventID % 100000 == 0){
+        G4cout << "Generated " << eventID << " particles" << G4endl;
+    }
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance(); 
 
     G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
 
-    analysisManager->FillNtupleIColumn(0, 0, eventID);
+    // analysisManager->FillNtupleIColumn(0, 0, eventID);
     G4int detectorID = preStepPoint->GetTouchableHandle()->GetCopyNumber();
-    analysisManager->FillNtupleIColumn(0, 1, detectorID);
+    analysisManager->FillNtupleIColumn(0, 0, detectorID);
     analysisManager->AddNtupleRow(0);
 
     G4double fEnergyDeposited = aStep->GetTotalEnergyDeposit();
