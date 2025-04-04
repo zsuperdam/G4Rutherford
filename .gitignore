@@ -34,5 +34,8 @@
 # build folder
 build/
 
+# data acquisition program folder
+data_acquisition_program/
+
 # Logbook
 Logbook.md
