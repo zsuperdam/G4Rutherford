@@ -1,0 +1,3 @@
+COM = "/dev/cu.usbmodem1411"
+SPEED = 9600
+
