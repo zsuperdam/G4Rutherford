@@ -15,3 +15,5 @@ Acquisizioni per stima del tempo morto:
 
 -->Pulser a 15Hz: tempo effettivo di acquisizione: 607.698902607/600
 
+-->Pulser a 30Hz: tempo effettivo di acquisizione: 616.352063179/600
+
