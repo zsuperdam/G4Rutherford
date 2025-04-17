@@ -22,3 +22,27 @@ distanza 5.05 cm
 -->Pulser a 45Hz: tempo effettivo di acquisizione: /600
 
 -->Pulser a 60Hz: tempo effettivo di acquisizione: /600
+
+## 17/04 ##
+
+Acquisizione count in funzione della pressione
+
+Calibrazione sensore di pressione
+----------
+|pressione (pirani) | tensione output|
+------------
+|1.5e-2|160|
+|2e-2|203|
+|3e-2|233|
+|4e-2|253|
+|5e-2|269|
+|6e-2|291|
+|8e-2|324|
+|1e-1|357|
+|2.1|632|
+|6.7|711|
+|8.5|739|
+|12|795|
+|16|831|
+|25|886|
+--------
