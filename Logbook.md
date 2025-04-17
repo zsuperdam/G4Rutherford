@@ -28,9 +28,9 @@ distanza 5.05 cm
 Acquisizione count in funzione della pressione
 
 Calibrazione sensore di pressione
-----------
-|pressione (pirani) | tensione output|
-------------
+
+|pressione (pirani) [mbar] | tensione output|
+|------|-----|
 |1.5e-2|160|
 |2e-2|203|
 |3e-2|233|
@@ -45,4 +45,3 @@ Calibrazione sensore di pressione
 |12|795|
 |16|831|
 |25|886|
---------
