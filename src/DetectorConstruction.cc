@@ -49,14 +49,14 @@ G4VPhysicalVolume *DetectorConstruction::Construct(){
     detVisAtt->SetForceSolid(true);
 
     // Numero di rivelatori e configurazione della posizione
-    G4int numDetectors = 95; // Numero di rivelatori
+    G4int numDetectors = 70; // Numero di rivelatori
     G4double radius = 8.0 * cm; // Raggio da utilizzare per la posizione dei rivelatori
     G4double angleStep = 1.8 * deg; // Passo angolare (90° per posizionarli agli angoli)
 
-    new G4PVPlacement(0, G4ThreeVector(0., 0., radius), logicDetector, "physDetector", logicWorld, false, 0, checkOverlaps);
-    logicDetector->SetVisAttributes(detVisAtt);
+    // new G4PVPlacement(0, G4ThreeVector(0., 0., radius), logicDetector, "physDetector", logicWorld, false, 0, checkOverlaps);
+    // logicDetector->SetVisAttributes(detVisAtt);
 
-    for(G4int i = 1; i < numDetectors + 1; i++) {
+    for(G4int i = 5; i < numDetectors + 1; i++) {
         G4double angle = i * angleStep; // Calcolo dell'angolo per ogni rivelatore
 
         // Calcolare la posizione
