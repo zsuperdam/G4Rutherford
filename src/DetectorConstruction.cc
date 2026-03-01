@@ -27,7 +27,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct(){
 
 
     //gold
-    G4double goldThickness = 155. * nm;
+    G4double goldThickness = 168. * nm;
     G4double goldSize = 2. * cm;
     G4Box *solidGold = new G4Box("solidGold", 0.5 * goldSize, 0.5 * goldSize, 0.5 * goldThickness);
     G4LogicalVolume *logicGold = new G4LogicalVolume(solidGold, gold, "logicalGold");
