@@ -1,9 +1,7 @@
-/run/numberOfThreads 4
+/run/numberOfThreads 16
 
 /run/initialize
 
 /run/printProgress 20000000
 
-/control/loop myLoop i 1 10 1
-/run/beamOn 2000000000
-/control/endloop
+/control/loop beamon.mac i 1 10 1
